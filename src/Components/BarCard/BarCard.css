@@ -1,0 +1,67 @@
+
+.beveragePrice{
+    transition: 0.6s;
+  }
+  .cards{
+    display: flex;
+    /* justify-content: space-between; */
+  }
+  .myOwnCard{
+    transition: 0.75s;
+      display: inline-block;
+  }
+  .beveragePriceUp{
+    color: rgb(15, 207, 15);
+  }
+  .beveragePriceDown{
+    color:rgb(210, 28, 28);
+  }
+  /* .menu{
+      margin: 15px;
+      margin-left: 25px;
+    }
+    
+    .card{
+      
+      width: 800px;
+      background-color:#A77EEE;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 15px;
+      border-radius: 20px;
+    }
+    
+    .beverage{
+      width: 25%;
+    }
+    
+    .buyBeverage{
+      border-radius: 20px;
+      width: 150px;
+      height: 30px;
+      border: none;
+      background-color: rgb(37, 191, 193);
+      transition: 0.75s;
+    }
+    
+  
+    .buyBeverage:hover{
+      background-color: rgb(36, 211, 182);
+      color: white;
+    }
+    .delete-icon,
+    .edit-icon{
+      float: right;
+      cursor: pointer;
+      transform: scale(2);
+      transition: 0.75s;
+      color: rgb(37, 191, 193);
+      margin: 10px;
+    }
+    
+    .delete-icon:hover,
+    .edit-icon:hover{
+      opacity: 0.5;
+      color: rgb(36, 211, 182);
+    } */
