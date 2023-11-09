@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import Beverage from "../Beverage/Beverage";
 import './BarCard.css';
 
-function BarCard(props) 
+function BarCard({coctails,onDelete,changePrices}) 
 {
   const[lastAdded,setLastAdded]=useState(-1);
   useEffect(()=>{
@@ -15,16 +15,16 @@ function BarCard(props)
       return()=>clearTimeout(timeoutId);
     }
   },[lastAdded])
-  if(props.coctails.length>0)
+  if(coctails.length>0)
   return ( 
       <div className="cards">
-      {props.coctails.map((el) => (
+      {coctails.map((el) => (
         <Beverage 
         key={el.id} 
         beverage={el} 
         priceColor={lastAdded===-1?"beveragePrice":lastAdded===el.id?"beveragePrice beveragePriceUp":"beveragePrice beveragePriceDown"}
-        onDelete={props.onDelete}
-        changePrices={props.changePrices}
+        onDelete={onDelete}
+        changePrices={changePrices}
         setLastAdded={setLastAdded}
         />
     ))}  </div>
