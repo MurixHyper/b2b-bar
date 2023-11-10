@@ -1,0 +1,29 @@
+.myOwnCard {
+    background-color: #1a1a1a;
+    color: bisque;
+  }
+  
+
+  .buttonBuy {
+    background-color: bisque;
+    color:black;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    transition: 0.75s;
+  }
+
+  .buttonBuy:hover{
+    background-color: rgb(0, 200, 200);
+    transition: 0.75s;
+  }
+
+  .delete-icon,
+  .edit-icon {
+    color: bisque;
+    transition: 0.75s;
+  }
+
+  .delete-icon:hover,
+  .edit-icon:hover {
+    color: rgb(0, 200, 200);
+  }

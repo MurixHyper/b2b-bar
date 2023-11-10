@@ -15,7 +15,7 @@ function Beverage({beverage, priceColor, onDelete, setLastAdded,changePrices}){
             <Card.Text className={priceColor}>
               {beverage.price+'$'}
             </Card.Text>
-            <Button onClick={()=>{
+            <Button className="buttonBuy" onClick={()=>{
               changePrices(beverage.id)
               setLastAdded(beverage.id)}}>Buy</Button>
             <IoCloseCircleSharp onClick={()=>onDelete(beverage.id)} className="delete-icon"/>
