@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import AddCoctail from '../AddCoctail/AddCoctail';
 
-function Beverage({beverage, priceColor, onDelete, setLastAdded,changePrices}){
+function Beverage({beverage, priceColor, onDelete, onEdit, setLastAdded,changePrices}){
     const[editForm,setEditForm]=useState(false);
     return(
       <Card className="myOwnCard" style={{ width: '18rem' }}>
@@ -21,7 +21,7 @@ function Beverage({beverage, priceColor, onDelete, setLastAdded,changePrices}){
             <IoCloseCircleSharp onClick={()=>onDelete(beverage.id)} className="delete-icon"/>
             <IoHammerSharp onClick={()=>{
               setEditForm(!editForm)}} className="edit-icon"/>
-              {editForm===true && <AddCoctail/>}
+              {editForm===true && <AddCoctail coctail={beverage} onAdd={onEdit}/>}
         </Card.Body>
       </Card>
     )

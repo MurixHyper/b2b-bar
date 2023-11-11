@@ -40,6 +40,14 @@ const App = () => {
     setCoctails([...coctails, { id, ...coctail }]);
   };
 
+  const editCoctail = (coctail) => {
+  setCoctails((prevCoctails) => {
+    const updatedCoctails = [...prevCoctails];
+    updatedCoctails[coctail.id - 1] = coctail;
+    return updatedCoctails;
+  }); 
+};
+
   const deleteCoctail = (id) => {
     setCoctails(coctails.filter((el) => el.id !== id));
   };
@@ -60,8 +68,18 @@ const App = () => {
       <header>Menu</header>
       <div className="main-div">
         <main>
-          <BarCard coctails={coctails.filter(coctail => coctail.category === "Coctail")} onDelete={deleteCoctail} changePrices={changePrices} nameOfCategory={"Coctails"} />
-          <BarCard coctails={coctails.filter(coctail => coctail.category === "Shot")} onDelete={deleteCoctail} changePrices={changePrices} nameOfCategory={"Shots"} />
+          <BarCard 
+          coctails={coctails.filter(coctail => coctail.category === "Coctail")} 
+          onDelete={deleteCoctail}
+          onEdit={editCoctail} 
+          changePrices={changePrices} 
+          nameOfCategory={"Coctails"} />
+          <BarCard 
+          coctails={coctails.filter(coctail => coctail.category === "Shot")} 
+          onDelete={deleteCoctail}
+          onEdit={editCoctail} 
+          changePrices={changePrices} 
+          nameOfCategory={"Shots"} />
         </main>
         <aside>
           <AddCoctail onAdd={addCoctail} />

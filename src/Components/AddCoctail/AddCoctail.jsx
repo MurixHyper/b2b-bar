@@ -4,13 +4,14 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import React, { useState, useRef } from "react";
 import './AddCoctail.css';
 
-const AddCoctail = ({ onAdd }) => {
+const AddCoctail = ({ coctail, onAdd }) => {
   const [formData, setFormData] = useState({
     title: "",
     ingrs: "",
     price: 1,
     category: ""
   });
+
 
   const myFormRef = useRef(null);
 
@@ -30,13 +31,18 @@ const AddCoctail = ({ onAdd }) => {
   };
 
   const handleAdd = () => {
-    onAdd({
+    const coctailToAdd = {
       title: formData.title,
       ingrs: formData.ingrs,
       price: formData.price,
       category: formData.category
-    });
+    };
 
+    if (coctail) {
+      coctailToAdd.id = coctail.id;
+    }
+
+    onAdd(coctailToAdd);
     myFormRef.current.reset();
   };
 

@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import Beverage from "../Beverage/Beverage";
 import './BarCard.css';
 
-function BarCard({coctails,onDelete,changePrices,nameOfCategory}) 
+function BarCard({coctails,onDelete, onEdit,changePrices,nameOfCategory}) 
 {
   const[lastAdded,setLastAdded]=useState(-1);
   useEffect(()=>{
@@ -25,6 +25,7 @@ function BarCard({coctails,onDelete,changePrices,nameOfCategory})
         beverage={el} 
         priceColor={lastAdded===-1?"beveragePrice":lastAdded===el.id?"beveragePrice beveragePriceUp":"beveragePrice beveragePriceDown"}
         onDelete={onDelete}
+        onEdit={onEdit}
         changePrices={changePrices}
         setLastAdded={setLastAdded}
         />
