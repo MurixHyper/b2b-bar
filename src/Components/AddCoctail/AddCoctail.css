@@ -1,8 +1,14 @@
-.div-form{
+.div-form-edit,
+.div-form-add{
     background-color: #1a1a1a;
-    padding: 15px;
     color: blueviolet;
     border-radius: 10px;
+}
+.div-form-edit{
+    padding-top: 15px;
+}
+.div-form-add{
+    padding: 10px 15px;
 }
 .form-control{
     background-color: #312f2f;
@@ -22,6 +28,12 @@
     transition: 0.75s;
 }
 
+.button:focus{
+    background-color: blueviolet;
+    border: none;
+}
+
+
 .button:hover{
     background-color: rgb(115, 37, 189);
 }
@@ -29,4 +41,7 @@
 .dropdown item{
     background-color: #312f2f;
     color: aliceblue;
+}
+.form{
+    margin-bottom: 40px;
 }

@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import BarCard from "../BarCard/BarCard";
 import AddCoctail from "../AddCoctail/AddCoctail";
 import './App.css';
@@ -35,6 +35,18 @@ const App = () => {
     }
   ]);
 
+  const[lastAdded,setLastAdded]=useState(-1);
+  useEffect(() => {
+    if(lastAdded !== -1)
+    {
+      const timeoutId = setTimeout(() =>
+      {
+        setLastAdded(-1);
+      },2000);
+      return() => clearTimeout(timeoutId);
+    }
+  }, [lastAdded])
+
   const addCoctail = (coctail) => {
     const id = coctails.length + 1;
     setCoctails([...coctails, { id, ...coctail }]);
@@ -63,6 +75,10 @@ const App = () => {
     setCoctails(updatedCoctails);
   };
 
+  const priceColor = (id) => {
+    return lastAdded===-1?"beveragePrice":lastAdded===id?"beveragePrice beveragePriceUp":"beveragePrice beveragePriceDown"
+  }
+
   return (
     <div className="container">
       <header>Menu<hr/></header>
@@ -72,17 +88,21 @@ const App = () => {
           coctails={coctails.filter(coctail => coctail.category === "Coctail")} 
           onDelete={deleteCoctail}
           onEdit={editCoctail} 
+          priceColor={priceColor}
+          setLastAdded={setLastAdded}
           changePrices={changePrices} 
           nameOfCategory={"Coctails"} />
           <BarCard 
           coctails={coctails.filter(coctail => coctail.category === "Shot")} 
           onDelete={deleteCoctail}
           onEdit={editCoctail} 
+          priceColor={priceColor}
+          setLastAdded={setLastAdded}
           changePrices={changePrices} 
           nameOfCategory={"Shots"} />
         </main>
         <aside>
-          <AddCoctail onAdd={addCoctail} buttonText={"Add"}/>
+          <AddCoctail onAdd={addCoctail} buttonText={"Add"} divForm={"div-form-add"}/>
         </aside>
       </div>
     </div>

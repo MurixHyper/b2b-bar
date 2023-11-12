@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import React, { useState, useRef } from "react";
 import './AddCoctail.css';
 
-const AddCoctail = ({ coctail, onAdd, buttonText}) => {
+const AddCoctail = ({ coctail, onAdd, buttonText, divForm}) => {
   const [formData, setFormData] = useState({
     title: "",
     ingrs: "",
@@ -46,8 +46,8 @@ const AddCoctail = ({ coctail, onAdd, buttonText}) => {
   };
 
   return (
-    <div className="div-form">
-      <Form ref={myFormRef} >
+    <div className={divForm}>
+      <Form ref={myFormRef} className="form">
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -84,7 +84,7 @@ const AddCoctail = ({ coctail, onAdd, buttonText}) => {
         <Form.Group className="mb-3" controlId="formBasicCategory">
           <Form.Label>Category</Form.Label>
           <Dropdown  onSelect={(eventKey) => handleCategoryChange(eventKey)}>
-            <Dropdown.Toggle className="button" variant="success" id="dropdown-basic">
+            <Dropdown.Toggle className="button toggle" variant="success" id="dropdown-basic">
               {formData.category}
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown">

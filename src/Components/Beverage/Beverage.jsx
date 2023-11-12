@@ -12,13 +12,13 @@ function Beverage({beverage, priceColor, onDelete, onEdit, setLastAdded,changePr
         <Card.Body> 
           <div className="cardBody">
             <Card.Title>{beverage.title}</Card.Title>       
-            <Card.Text>{beverage.ingrs}</Card.Text>
-            <Card.Text className={priceColor}>
+            <Card.Text className="text">{beverage.ingrs}</Card.Text>
+            <Card.Text className={priceColor(beverage.id)}>
               {beverage.price+'$'}
             </Card.Text>
           </div>
           <div className="coctail">
-            {editForm===true && <AddCoctail coctail={beverage} onAdd={onEdit} buttonText={"Edit"}/>}
+            {editForm===true && <AddCoctail coctail={beverage} onAdd={onEdit} buttonText={"Edit"} divForm={"div-form-edit"}/>}
           </div>
           <div className="buttons">
             <Button className="buttonBuy" onClick={()=>{

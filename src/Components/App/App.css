@@ -15,3 +15,12 @@ aside{
 .container header hr{
     border: 2px solid blueviolet;
 }
+.beveragePrice{
+    transition: 0.6s;
+}
+.beveragePriceUp{
+    color: rgb(15, 207, 15);
+}
+.beveragePriceDown{
+    color:rgb(210, 28, 28);
+}

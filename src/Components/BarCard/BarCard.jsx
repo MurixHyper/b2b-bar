@@ -1,20 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React from "react";
 import Beverage from "../Beverage/Beverage";
 import './BarCard.css';
 
-function BarCard({coctails,onDelete, onEdit,changePrices,nameOfCategory}) 
+function BarCard({coctails,onDelete, onEdit,changePrices,nameOfCategory, priceColor, setLastAdded}) 
 {
-  const[lastAdded,setLastAdded]=useState(-1);
-  useEffect(() => {
-    if(lastAdded !== -1)
-    {
-      const timeoutId = setTimeout(() =>
-      {
-        setLastAdded(-1);
-      },2000);
-      return() => clearTimeout(timeoutId);
-    }
-  }, [lastAdded])
   if(coctails.length > 0)
   return ( 
   <div className="barCard">
@@ -24,7 +13,7 @@ function BarCard({coctails,onDelete, onEdit,changePrices,nameOfCategory})
         <Beverage 
         key={el.id} 
         beverage={el} 
-        priceColor={lastAdded===-1?"beveragePrice":lastAdded===el.id?"beveragePrice beveragePriceUp":"beveragePrice beveragePriceDown"}
+        priceColor={priceColor}
         onDelete={onDelete}
         onEdit={onEdit}
         changePrices={changePrices}
