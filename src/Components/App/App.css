@@ -1,12 +1,17 @@
-main{
-    width: 50%;
-    float: left;
-    margin: 50px 100px;
-}
+
 aside{
-    width: 20%;
-    float: left;
-    margin-top: 50px;
-    margin-left: 5%;
+    width: 35%;
 }
 
+.main-div{
+    display: flex;
+    justify-content: space-between;
+}
+.container header{
+    font-size: 48px;
+    color:blueviolet;
+    width: 100%;
+}
+.container header hr{
+    border: 2px solid blueviolet;
+}

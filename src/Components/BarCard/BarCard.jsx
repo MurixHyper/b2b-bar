@@ -5,20 +5,21 @@ import './BarCard.css';
 function BarCard({coctails,onDelete, onEdit,changePrices,nameOfCategory}) 
 {
   const[lastAdded,setLastAdded]=useState(-1);
-  useEffect(()=>{
-    if(lastAdded!==-1)
+  useEffect(() => {
+    if(lastAdded !== -1)
     {
-      const timeoutId=setTimeout(()=>
+      const timeoutId = setTimeout(() =>
       {
         setLastAdded(-1);
       },2000);
-      return()=>clearTimeout(timeoutId);
+      return() => clearTimeout(timeoutId);
     }
-  },[lastAdded])
-  if(coctails.length>0)
+  }, [lastAdded])
+  if(coctails.length > 0)
   return ( 
-      <div className="cards">
-        <div>{nameOfCategory}</div>
+  <div className="barCard">
+    <div className="title">{nameOfCategory}<hr/></div>
+      <div className="cards">  
       {coctails.map((el) => (
         <Beverage 
         key={el.id} 
@@ -28,14 +29,15 @@ function BarCard({coctails,onDelete, onEdit,changePrices,nameOfCategory})
         onEdit={onEdit}
         changePrices={changePrices}
         setLastAdded={setLastAdded}
-        />
-    ))}  </div>
+        />))}  
+    </div>
+  </div>
   );
   else return(
-      <div className="barCard">
-        <h3>No beverages</h3>
-      </div>)
+    <div className="barCard">
+      <h3 className="title">No beverages<hr/></h3>
+    </div>
+    )
 }
-
 
 export default BarCard

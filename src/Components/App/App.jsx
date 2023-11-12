@@ -65,7 +65,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <header>Menu</header>
+      <header>Menu<hr/></header>
       <div className="main-div">
         <main>
           <BarCard 
@@ -82,7 +82,7 @@ const App = () => {
           nameOfCategory={"Shots"} />
         </main>
         <aside>
-          <AddCoctail onAdd={addCoctail} />
+          <AddCoctail onAdd={addCoctail} buttonText={"Add"}/>
         </aside>
       </div>
     </div>

@@ -5,22 +5,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
-/* 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-
-aside form input,
-aside form button{
-  width: 40%;
-}
-main{
-  width: 60%;
-}
-.main-div{
-  display: flex;
-} */
