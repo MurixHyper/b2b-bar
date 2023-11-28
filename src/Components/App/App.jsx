@@ -67,9 +67,9 @@ const App = () => {
   const changePrices = (id) => {
     const updatedCoctails = coctails.map((el) => {
       if (id === el.id) {
-        return { ...el, price: el.price + 2 };
+        return { ...el, price: parseFloat((el.price + 0.1).toFixed(2)) };
       } else {
-        return { ...el, price: el.price - 1 };
+        return { ...el, price: (0<el.price && el.price<=0.1)? 0.1: parseFloat((el.price - 0.09).toFixed(2)) };
       }
     });
     setCoctails(updatedCoctails);
